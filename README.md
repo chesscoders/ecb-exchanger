@@ -19,11 +19,11 @@ yarn add ecb-exchange-rates
 ## Usage
 
 ```js
-const { fetchTodayExchangeRate } = require('ecb-exchange-rates');
+const { fetchExchangeRateForToday } = require('ecb-exchange-rates');
 
-const USD_EUR = await fetchTodayExchangeRate('USD/EUR');
+const USD_EUR = await fetchExchangeRateForToday('USD/EUR');
 // outputs: 0.8959
-const EUR_USD = await fetchTodayExchangeRate('EUR/USD');
+const EUR_USD = await fetchExchangeRateForToday('EUR/USD');
 // outputs: 1.1162
 ```
 

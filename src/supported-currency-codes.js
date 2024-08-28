@@ -1,4 +1,4 @@
-const acceptedCurrencies = [
+const supportedCurrencyCodes = [
   'AUD', // Australian Dollar
   'BGN', // Bulgarian Lev
   'BRL', // Brazilian Real
@@ -30,4 +30,4 @@ const acceptedCurrencies = [
   'ZAR', // South African Rand
 ];
 
-module.exports = acceptedCurrencies;
+module.exports = supportedCurrencyCodes;
