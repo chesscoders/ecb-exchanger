@@ -23,11 +23,18 @@ const fetchTodayExchangeRate = async (pair) => {
   // Fetch exchange rate data from ECB
   const data = await fetchEuroExchangeRate();
 
-  // If EUR is the base currency, return the exchange rate as is
+  // If EUR is the target currency, return the exchange rate as is
   if (baseCurrency === 'EUR') {
     const value = data.find((record) => record.CURRENCY === targetCurrency).OBS_VALUE;
     // Round to exactly 4 decimal places
     return round(value);
+  }
+
+  // If EUR is the base currency, return the inverse of the exchange rate
+  if (targetCurrency === 'EUR') {
+    const value = data.find((record) => record.CURRENCY === baseCurrency).OBS_VALUE;
+    // Round to exactly 4 decimal places
+    return round(1 / value);
   }
 
   // Otherwise, calculate the exchange rate

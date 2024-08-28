@@ -37,7 +37,15 @@ describe('Fetch exchange rate ONLY for today for a pair of currencies from ECB',
     expect(result).to.equal(1.1155);
   });
 
-  it('should return the correct exchange rate when baseCurrency is not EUR', async () => {
+  it('should return the correct exchange rate when targetCurrency is EUR', async () => {
+    const data = [{ CURRENCY: 'USD', OBS_VALUE: 1.1155, TIME_PERIOD: '2023-10-01' }];
+    fetchStub.resolves(data);
+
+    const result = await fetchTodayExchangeRate('EUR/USD');
+    expect(result).to.equal(0.8969);
+  });
+
+  it('should return the correct exchange rate when currencies are not EUR', async () => {
     const data = [
       { CURRENCY: 'USD', OBS_VALUE: 1.1155, TIME_PERIOD: '2023-10-01' },
       { CURRENCY: 'GBP', OBS_VALUE: 0.8299, TIME_PERIOD: '2023-10-01' },
