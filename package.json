@@ -12,6 +12,9 @@
   ],
   "author": "Victor Ocnarescu <victor@chesscoders.com> (https://chesscoders.com)",
   "license": "MIT",
+  "engines": {
+    "node": ">= 18"
+  },
   "dependencies": {
     "csv-parse": "^5.5.6"
   },
