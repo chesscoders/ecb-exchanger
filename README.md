@@ -1,6 +1,6 @@
-# ECB Exchange Rates
+# Daily Exchange Rates
 
-The ECB Exchange Rates package provides exchange rate lookups courtesy of the European Central Bank
+The Daily Exchange Rates package provides exchange rate lookups courtesy of the European Central Bank
 
 ## Installation
 
@@ -31,8 +31,8 @@ const CAD_USD = await daily('CAD/USD');
 
 ## Contributing
 
-We welcome contributions to improve ECB Exchange Rates. Please feel free to submit pull requests or report issues via the [GitHub repository](https://github.com/chesscoders/daily-exchange-rates).
+We welcome contributions to improve Daily Exchange Rates. Please feel free to submit pull requests or report issues via the [GitHub repository](https://github.com/chesscoders/daily-exchange-rates).
 
 ## License
 
-ECB Exchange Rates is licensed under the MIT License. See the LICENSE file for more details.
+Daily Exchange Rates is licensed under the MIT License. See the LICENSE file for more details.
