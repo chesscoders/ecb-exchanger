@@ -1,5 +1,6 @@
-const fetchTodaysRate = require('./src/fetch-today-exchange-rate');
+const dailyExchangeRate = require('./src/fetch-exchange-rate-for-today');
 
 module.exports = {
-  fetchTodaysRate,
+  dailyExchangeRate,
+  daily: dailyExchangeRate, // Alias
 };

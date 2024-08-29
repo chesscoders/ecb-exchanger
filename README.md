@@ -19,19 +19,19 @@ yarn add ecb-exchange-rates
 ## Usage
 
 ```js
-const { fetchExchangeRateForToday } = require('ecb-exchange-rates');
+import { daily } from 'daily-exchange-rates';
 
-const USD_EUR = await fetchExchangeRateForToday('USD/EUR');
+const USD_EUR = await daily('USD/EUR');
 // outputs: 0.8959
-const EUR_USD = await fetchExchangeRateForToday('EUR/USD');
+const EUR_USD = await daily('EUR/USD');
 // outputs: 1.1162
-const CAD_USD = await fetchExchangeRateForToday('CAD/USD');
+const CAD_USD = await daily('CAD/USD');
 // outputs: 0.7428
 ```
 
 ## Contributing
 
-We welcome contributions to improve ECB Exchange Rates. Please feel free to submit pull requests or report issues via the [GitHub repository](https://github.com/chesscoders/ecb-exchange-rates).
+We welcome contributions to improve ECB Exchange Rates. Please feel free to submit pull requests or report issues via the [GitHub repository](https://github.com/chesscoders/daily-exchange-rates).
 
 ## License
 

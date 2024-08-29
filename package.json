@@ -1,5 +1,5 @@
 {
-  "name": "ecb-exchange-rates",
+  "name": "daily-exchange-rates",
   "version": "0.1.0",
   "description": "The ECB Exchange Rates package provides exchange rate lookups courtesy of the European Central Bank",
   "main": "index.js",
