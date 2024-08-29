@@ -7,9 +7,9 @@ The ECB Exchange Rates package provides exchange rate lookups courtesy of the Eu
 To add this package to your project, run:
 
 ```sh
-npm i ecb-exchange-rates
+npm i daily-exchange-rates
 # or, using Yarn
-yarn add ecb-exchange-rates
+yarn add daily-exchange-rates
 ```
 
 ## Features
