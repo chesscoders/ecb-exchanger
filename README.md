@@ -25,6 +25,8 @@ const USD_EUR = await fetchExchangeRateForToday('USD/EUR');
 // outputs: 0.8959
 const EUR_USD = await fetchExchangeRateForToday('EUR/USD');
 // outputs: 1.1162
+const CAD_USD = await fetchExchangeRateForToday('CAD/USD');
+// outputs: 0.7428
 ```
 
 ## Contributing

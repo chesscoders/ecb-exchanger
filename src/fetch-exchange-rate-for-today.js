@@ -14,7 +14,7 @@ const fetchExchangeRateForToday = async (
   customFetcher = fetchLatestEuroExchangeRate
 ) => {
   // Parse and validate currency pair
-  const [targetCurrencyCode, baseCurrencyCode] = currencyPair.split('/');
+  const [targetCurrencyCode, baseCurrencyCode] = currencyPair.toUpperCase().split('/');
   validateCurrencies([targetCurrencyCode, baseCurrencyCode]);
 
   // Fetch exchange rate data

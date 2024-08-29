@@ -1,19 +1,19 @@
 const { expect } = require('chai');
+const { stub, restore } = require('sinon');
 const fetchExchangeRateForToday = require('../src/fetch-exchange-rate-for-today');
 const fetchLatestEuroExchangeRate = require('../src/fetch-latest-euro-exchange-rate');
-const sinon = require('sinon');
 
 describe('Fetch exchange rate ONLY for today for a pair of currencies from ECB', () => {
   let fetchStub;
 
   // Stub fetchLatestEuroExchangeRate before each test
   beforeEach(() => {
-    fetchStub = sinon.stub(fetchLatestEuroExchangeRate, 'apply');
+    fetchStub = stub(fetchLatestEuroExchangeRate, 'apply');
   });
 
   // Restore the stub after each test
   afterEach(() => {
-    sinon.restore();
+    restore();
   });
 
   it('should throw an error if targetCurrency is not supported', async () => {
@@ -30,6 +30,17 @@ describe('Fetch exchange rate ONLY for today for a pair of currencies from ECB',
     } catch (error) {
       expect(error.message).to.equal('ECB does not support BTC');
     }
+  });
+
+  it('should correctly handle lowercase currency pairs', async () => {
+    const data = [
+      { CURRENCY: 'USD', OBS_VALUE: 1.1155, TIME_PERIOD: '2023-10-01' },
+      { CURRENCY: 'CAD', OBS_VALUE: 0.7218, TIME_PERIOD: '2023-10-01' },
+    ];
+    const callback = fetchStub.resolves(data);
+
+    await fetchExchangeRateForToday('cad/usd', callback);
+    expect(fetchExchangeRateForToday).to.not.throw();
   });
 
   it('should return the correct exchange rate when baseCurrency is EUR', async () => {
