@@ -1,5 +1,5 @@
 {
-  "name": "ecb-exchange-rates",
+  "name": "ecb-exchanger",
   "version": "0.1.0",
   "description": "The ECB Exchange Rates package provides exchange rate lookups courtesy of the European Central Bank",
   "main": "index.js",
@@ -7,6 +7,8 @@
     "test": "mocha tests"
   },
   "keywords": [
+    "ecb",
+    "european central bank",
     "exchange",
     "exchange rates"
   ],
