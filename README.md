@@ -15,6 +15,7 @@ yarn add ecb-exchanger
 ## Features
 
 - Fetch exchange rates for any currency pair supported by the European Central Bank ONLY for today
+- Optimise the process of fetching results from the ECB by caching daily exchange rates
 
 ## Usage
 
