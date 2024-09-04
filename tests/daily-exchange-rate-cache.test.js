@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const dailyCache = require('../src/daily-exchange-rate-cache');
 
-describe('dailyCache', () => {
+describe('Daily exchange rate cache', () => {
   beforeEach(() => {
     // Clear the cache before each test
     dailyCache.cache = {};

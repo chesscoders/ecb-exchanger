@@ -5,20 +5,16 @@ const supportedCurrencyCodes = require('./supported-currency-codes');
  * Fetches and calculates the exchange rate for a given currency pair ONLY for today.
  *
  * @param {string} currencyPair - The currency pair in the format 'TARGET/BASE', e.g., 'USD/EUR'.
- * @param {Function} [customFetcher=getEuroExchangeRates] - Optional custom fetcher function.
  * @returns {Promise<number>} - The exchange rate, rounded to 4 decimal places.
  * @throws {Error} - Throws an error if either the target or base currency is not supported by the ECB.
  */
-const fetchExchangeRateForToday = async (
-  currencyPair,
-  customFetcher = fetchLatestEuroExchangeRate
-) => {
+const fetchExchangeRateForToday = async (currencyPair) => {
   // Parse and validate currency pair
   const [targetCurrencyCode, baseCurrencyCode] = currencyPair.toUpperCase().split('/');
   validateCurrencies([targetCurrencyCode, baseCurrencyCode]);
 
   // Fetch exchange rate data
-  const exchangeRateData = await customFetcher();
+  const exchangeRateData = await fetchLatestEuroExchangeRate();
 
   // Calculate exchange rate based on the currency pair
   if (baseCurrencyCode === 'EUR') {

@@ -1,5 +1,6 @@
 const { parse } = require('csv-parse/sync');
 const dailyCache = require('./daily-exchange-rate-cache');
+const fetchEcbData = require('./fetch-ecb-data');
 
 const fetchLatestEuroExchangeRate = async () => {
   try {
@@ -15,15 +16,8 @@ const fetchLatestEuroExchangeRate = async () => {
       return cachedExchangeRate;
     }
 
-    const ecbApiUrl = `https://sdw-wsrest.ecb.europa.eu/service/data/EXR/D..EUR.SP00.A`;
-    const queryParams = new URLSearchParams({
-      startPeriod: startDate,
-      endPeriod: endDate,
-      format: 'csvdata',
-    });
-    const apiUrl = `${ecbApiUrl}?${queryParams}`;
-
-    const apiResponse = await fetch(apiUrl);
+    // Fetch the exchange rate from the ECB API
+    const apiResponse = await fetchEcbData(startDate, endDate);
     if (!apiResponse.ok) {
       throw new Error(`Failed to fetch data: ${apiResponse.statusText}`);
     }
