@@ -1,6 +1,6 @@
 {
   "name": "ecb-exchanger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The ECB Exchanger package provides exchange rate lookups courtesy of the European Central Bank",
   "main": "index.js",
   "scripts": {
