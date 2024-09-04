@@ -21,7 +21,6 @@ const fetchLatestEuroExchangeRate = async () => {
       endPeriod: endDate,
       format: 'csvdata',
     });
-    console.log('called')
     const apiUrl = `${ecbApiUrl}?${queryParams}`;
 
     const apiResponse = await fetch(apiUrl);
